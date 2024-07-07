@@ -1,0 +1,4 @@
+[build]
+  base = ""
+  publish = "pkg"
+  command = "wasm-pack build --target web"

@@ -26,3 +26,5 @@ Cargo.lock
 .vscode/
 .idea/
 *.swp/target/
+# Local Netlify folder
+.netlify
