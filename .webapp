@@ -1,0 +1,17 @@
+image:
+  # Specify the base image for the environment
+  name: rust:latest
+
+# Define the steps to build and deploy your application
+steps:
+  - name: Install wasm-pack
+    run: cargo install wasm-pack
+
+  - name: Build Leptos app
+    run: wasm-pack build --target web
+
+  - name: Create Docker image
+    run: docker build -t your-leptos-app .
+
+  - name: Deploy Docker image
+    run: docker run -d -p 80:80 your-leptos-app
