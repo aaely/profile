@@ -5,6 +5,7 @@ mod nav;
 mod git_user;
 mod resume;
 mod models;
+mod algos;
 use router::Router;
 use leptos::*;
 use state::GlobalState;

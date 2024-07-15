@@ -11,7 +11,31 @@ pub fn GitUser() -> impl IntoView {
         |state| state.user.clone(), 
         |state, u| state.user = u);
     let err = create_rw_signal(None::<String>);
-
+    let code = r#"
+    let get_user = {
+        move |_| {
+            let client = client.clone();
+            spawn_local(async move {
+                match client
+                    .get("https://api.github.com/users/aaely")
+                    .header("User-Agent", "request")
+                    .send()
+                    .await {
+                        Ok(response) => {
+                            if let Ok(user_info) = response.json::<GitHubUser>().await {
+                                set_user(Some(user_info));
+                            } else {
+                                err.set(Some("failed to parse user info".to_string()));
+                            }
+                        },
+                        Err(error) => {
+                            err.set(Some(format!("{:?}", error)));
+                        }
+                    }
+            });
+        }
+    };
+    "#;
     let get_user = {
         move |_| {
             let client = client.clone();
@@ -69,7 +93,15 @@ pub fn GitUser() -> impl IntoView {
                 view! { 
                     <div style="text-align: center;">
                         <p>On this page we will use the reqwest crate to pull my user information from github</p>
-                        <button on:click={get_user.clone()}>Get User Profile</button>
+                        <button on:click={get_user.clone()}>Get User Profile Check</button>
+                        <div style="
+                        text-align: left;
+                        position: relative;
+                        ">
+                        <pre><code class="language-rust">
+                            {code}
+                        </code></pre>
+                        </div>
                     </div> 
                 }
             }}

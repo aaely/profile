@@ -7,12 +7,12 @@
     <link data-trunk rel="copy-dir" href="static/">
     <link data-trunk rel="rust" data-wasm-opt="z"/>
     <link href="static/styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet" />
     <!-- Import Materialize CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
 </head>
 <body>
     <div id="root">
-
+        
     </div>
     <script>
         function downloadCSV(filename, text) {
@@ -28,5 +28,15 @@
             document.body.removeChild(element);
         }
     </script>
+    <script type="module">
+        console.log('Starting WASM initialization...');
+        import init from './profile.js';
+        init().then(() => {
+            console.log('WASM initialized successfully');
+        }).catch(err => {
+            console.error('Error initializing WASM:', err);
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/prism.js"></script>
 </body>
 </html>

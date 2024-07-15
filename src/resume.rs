@@ -1,4 +1,5 @@
 use leptos::*;
+use log::log;
 use wasm_bindgen::JsCast;
 use web_sys::{window, HtmlStyleElement};
 use crate::models::BarData;
@@ -7,61 +8,74 @@ use crate::models::BarData;
 pub fn Resume() -> impl IntoView {
 
     view! {
-        <div class="mycontainer">
-            <section style="margin-bottom: 20px;">
-                <h2>{"Contact Information"}</h2>
-                <p>{"Name: John Doe"}</p>
-                <p>{"Email: john.doe@example.com"}</p>
-                <p>{"Phone: (123) 456-7890"}</p>
-                <p>{"LinkedIn: linkedin.com/in/johndoe"}</p>
-                <p>{"GitHub: github.com/johndoe"}</p>
+        <div class="mygrid">
+            <section class="header">
+                <div class="title">
+                <h3>"Aaron Ely          aaron.ely@hotmail.com"</h3>
+                <p>{"Phone: (913) 547-2476"}</p>
+                <a style="color: limegreen;" href="https://github.com/aaely">{"GitHub: github.com/aaely"}</a>
+                </div>
+                <img src="/static/images/profile.jpg" class="avatar"/>
             </section>
-            <section style="margin-bottom: 5%;">
+            <section class="main1">
+
+            </section>
+            <section class="main2">
+                <div style="margin-bottom: 5%">
                 <Languages />
-            </section>
-
-            <section style="margin-bottom: 5%;">
+                </div>
+                <div style="margin-bottom: 5%">
                 <Database />
-            </section>
-
-            <section style="margin-bottom: 5%;">
+                </div>
+                <div style="margin-bottom: 5%">
                 <AreaExpertise />
+                </div>
             </section>
 
-            <section style="margin-bottom: 20px;">
-                <h2>{"Education"}</h2>
-                <p><strong>{"B.Sc. in Computer Science"}</strong></p>
-                <p>{"University of Example, 2015 - 2019"}</p>
-            </section>
-
-            <section style="margin-bottom: 20px;">
-                <h2>{"Experience"}</h2>
-                <p><strong>{"Software Engineer"}</strong></p>
-                <p>{"Example Company, 2020 - Present"}</p>
+            <section class="main1">
+                <h2>{"Work Experience"}</h2>
+                <p><strong>{"IT Technician"}</strong></p>
+                <p>{"Penn National Gaming 2017 - 2019"}</p>
                 <ul>
-                    <li>{"Developed and maintained web applications using Rust and Leptos"}</li>
-                    <li>{"Collaborated with cross-functional teams to deliver high-quality software"}</li>
-                    <li>{"Implemented REST APIs and integrated third-party services"}</li>
+                    <li>{"Troubleshot issues with client devices."}</li>
+                    <li>{"Completed and helped with software deployment using SCCM"}</li>
+                    <li>{"Troubleshot issues with MICROS terminals, server issues, and everything between."}</li>
+                    <li>{"Programmed and configured Nortel IP phones"}</li>
                 </ul>
-            </section>
-
-            <section style="margin-bottom: 20px;">
-                <h2>{"Skills"}</h2>
+                <br />
+                <p><strong>{"System Test Engineer"}</strong></p>
+                <p>{"Gaming Laboratories International 2019 - 2021"}</p>
                 <ul>
-                    <li>{"Programming Languages: Rust, JavaScript, Python"}</li>
-                    <li>{"Web Technologies: HTML, CSS, Leptos, React"}</li>
-                    <li>{"Tools: Git, Docker, Kubernetes"}</li>
-                    <li>{"Databases: PostgreSQL, MongoDB"}</li>
+                    <li>{"Tested back end casino systems for jurisdictional technical complaince"}</li>
+                    <li>{"Developed test plans to ensure all requirements were met on a per jurisdiction basis"}</li>
+                    <li>{"Configured slot machines, server configurations, and interface devices to test"}</li>
+                    <li>{"Verified all reported mods either functioned as intended or did not"}</li>
+                    <li>{"Wireshark network traffic to ensure encryption standards were met"}</li>
+                    <li>{"Monitor SAS protocol messaging to ensure standards were being met"}</li>
                 </ul>
-            </section>
-
-            <section style="margin-bottom: 20px;">
+                <br />
+                <p><strong>{"Inventory Clerk"}</strong></p>
+                <p>{"Ryder Logistics 2024 - present"}</p>
+                <ul>
+                    <li>{"Investigate discrepancies in inventory quanties and resolve"}</li>
+                    <li>{"Investigate discrepancies in expected reciepts and the actual physical material received"}</li>
+                    <li>{"Automated receipt creation process and developed a scheduling application built entirely in Rust"}</li>
+                    <ul>
+                        <li>{"Front End: "}<a href="https://github.com/aaely/yew-app">{"https://github.com/aaely/yew-app"}</a></li>
+                        <li>{"Back End: "}<a href="https://github.com/aaely/rocket_backend">{"https://github.com/aaely/rocket_backend"}</a></li>
+                    </ul>
+                </ul>
+                <br />
                 <h2>{"Projects"}</h2>
                 <p><strong>{"Project 1: Personal Website"}</strong></p>
                 <p>{"Description: A personal website built with Leptos showcasing my portfolio and blog."}</p>
-
                 <p><strong>{"Project 2: Chat Application"}</strong></p>
                 <p>{"Description: A real-time chat application developed using Rust and WebSockets."}</p>
+                <h2>{"Education"}</h2>
+                <p><strong>{"B.Sc. Computer Science"}</strong></p>
+                <p>{"Southern New Hampshire University"}</p>
+                <p>{"March 2025"}</p>
+                <br />
             </section>
         </div>
     }
@@ -71,9 +85,9 @@ pub fn Resume() -> impl IntoView {
 fn Languages() -> impl IntoView {
     let data = create_rw_signal(vec![
         BarData { label: "Rust", value: 90 },
-        BarData { label: "Javascript", value: 90 },
+        BarData { label: "Javascript", value: 85 },
         BarData { label: "C++", value: 70 },
-        BarData { label: "Golang", value: 50 },
+        BarData { label: "Golang", value: 60 },
         BarData { label: "Java", value: 50 },
     ]);
 
@@ -87,12 +101,13 @@ fn Languages() -> impl IntoView {
         let mut keyframes = String::new();
         for (i, item) in data.get().iter().enumerate() {
             keyframes.push_str(&format!(
-                "@keyframes example{} {{
+                "@keyframes language{} {{
                     from {{ width: 0%; }}
                     to {{ width: {}%; }}
                 }}\n",
                 i, item.value
             ));
+            log::info!("{}", keyframes);
         }
 
         // Append the generated keyframes to the <style> element
@@ -107,7 +122,7 @@ fn Languages() -> impl IntoView {
                 view! {
                     <div class="bar-container">
                         <div class="label">{item.label}</div>
-                        <div class="bar" style={format!("animation: example{} 0.5s forwards;", i)}>{format!("{}%", item.value)}</div>
+                        <div class="bar" style={format!("animation: language{} 0.5s forwards;", i)}>{format!("{}%", item.value)}</div>
                     </div>
                 }
                 }).collect_view()}
@@ -134,7 +149,7 @@ fn Database() -> impl IntoView {
         let mut keyframes = String::new();
         for (i, item) in data.get().iter().enumerate() {
             keyframes.push_str(&format!(
-                "@keyframes example{} {{
+                "@keyframes database{} {{
                     from {{ width: 0%; }}
                     to {{ width: {}%; }}
                 }}\n",
@@ -154,7 +169,7 @@ fn Database() -> impl IntoView {
                 view! {
                     <div class="bar-container">
                         <div class="label">{item.label}</div>
-                        <div class="bar" style={format!("animation: example{} 0.5s forwards;", i)}>{format!("{}%", item.value)}</div>
+                        <div class="bar" style={format!("animation: database{} 0.5s forwards;", i)}>{format!("{}%", item.value)}</div>
                     </div>
                 }
                 }).collect_view()}
@@ -181,7 +196,7 @@ fn AreaExpertise() -> impl IntoView {
         let mut keyframes = String::new();
         for (i, item) in data.get().iter().enumerate() {
             keyframes.push_str(&format!(
-                "@keyframes example{} {{
+                "@keyframes area{} {{
                     from {{ width: 0%; }}
                     to {{ width: {}%; }}
                 }}\n",
@@ -201,7 +216,7 @@ fn AreaExpertise() -> impl IntoView {
                 view! {
                     <div class="bar-container">
                         <div class="label">{item.label}</div>
-                        <div class="bar" style={format!("animation: example{} 0.5s forwards;", i)}>{format!("{}%", item.value)}</div>
+                        <div class="bar" style={format!("animation: area{} 0.5s forwards;", i)}>{format!("{}%", item.value)}</div>
                     </div>
                 }
                 }).collect_view()}

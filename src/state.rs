@@ -11,7 +11,7 @@ pub struct GlobalState {
 impl GlobalState {
     pub fn new() -> Self {
         GlobalState {
-            current_view: "resume".to_string(),
+            current_view: "bio".to_string(),
             last_view: "bio".to_string(),
             user: None,
         }

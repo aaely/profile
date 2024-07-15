@@ -5,10 +5,12 @@ mod nav;
 mod git_user;
 mod resume;
 mod models;
+mod algos;
 use router::Router;
 use leptos::*;
 use state::GlobalState;
 use nav::Nav;
+use wasm_bindgen::prelude::*;
 
 #[component]
 fn App() -> impl IntoView {
@@ -30,9 +32,9 @@ fn App() -> impl IntoView {
     }
 }
 
-fn main() {
+#[wasm_bindgen(start)]
+pub fn main() {
+    console_error_panic_hook::set_once();
     console_log::init_with_level(log::Level::Debug).expect("error initializing log");
-
-    // Mount the App component to the body of the web page
-    mount_to_body(|| view! { <App /> });
+    leptos::mount_to_body(App);
 }

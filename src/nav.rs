@@ -28,6 +28,9 @@ pub fn Nav() -> impl IntoView {
                 <div on:click=move |_| set_current_view("bio".to_string())>
                     <p>{"Bio"}</p>
                 </div>
+                <div on:click=move |_| set_current_view("algos".to_string())>
+                    <p>{"Algos"}</p>
+                </div>
                 <div on:click=move |_| set_current_view("resume".to_string())>
                     <p>{"Resume"}</p>
                 </div>

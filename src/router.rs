@@ -1,6 +1,6 @@
 use leptos::*;
 use crate::state::GlobalState;
-use crate::{bio::Bio, git_user::GitUser, resume::Resume};
+use crate::{bio::Bio, git_user::GitUser, resume::Resume, algos::Algos};
 
 
 #[component]
@@ -18,6 +18,7 @@ pub fn Router() -> impl IntoView {
             "bio" => view! { <Bio /> },
             "git_user" => view! { <GitUser /> },
             "resume" => view! { <Resume /> },
+            "algos" => view! { <Algos /> },
             _ => view! {<NotFound />},
         }
     }}

@@ -6,9 +6,9 @@
     <title>Leptos Application</title>
     
     
-<script type="module" nonce="Q2q1j8thtbYo3EtfirktEw==">
-import init, * as bindings from '/profile-201c133cc0c613a4.js';
-const wasm = await init('/profile-201c133cc0c613a4_bg.wasm');
+<script type="module" nonce="82BTXq2izV3oReDg0+gSsg==">
+import init, * as bindings from '/profile-9ce59c2664274e1a.js';
+const wasm = await init('/profile-9ce59c2664274e1a_bg.wasm');
 
 
 window.wasmBindings = bindings;
@@ -18,14 +18,14 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
 </script>
     <link href="static/styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet" />
     <!-- Import Materialize CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
 
-<link rel="modulepreload" href="/profile-201c133cc0c613a4.js" crossorigin=anonymous integrity="sha384-329vutXG99h5Cbg9S7nX7pnUForOUBGWMk09mY08CMH2r40Oa4v3qfcsdxZP5KLi">
-<link rel="preload" href="/profile-201c133cc0c613a4_bg.wasm" crossorigin=anonymous integrity="sha384-kpqDRQdClvHuyZlxTY595BzGhN73Wp63TXI6DxSCaH5Tzyay6v68WyIyNdv9e/An" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/profile-9ce59c2664274e1a.js" crossorigin=anonymous integrity="sha384-6/XOptuk6iUM5zJkIaGe0XC3J2dibVgjd2ljRjLaSm9gtngVuiPpkYNIXDFtq7vZ">
+<link rel="preload" href="/profile-9ce59c2664274e1a_bg.wasm" crossorigin=anonymous integrity="sha384-yHcCGJapw2AgAiEikGgfOn6hmFGcpcdnnLAmkO2eZ7ecVD4+emRup3e8LNTNZzZV" as="fetch" type="application/wasm"></head>
 <body>
     <div id="root">
-
+        
     </div>
     <script>
         function downloadCSV(filename, text) {
@@ -41,6 +41,16 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
             document.body.removeChild(element);
         }
     </script>
+    <script type="module">
+        console.log('Starting WASM initialization...');
+        import init from './profile.js';
+        init().then(() => {
+            console.log('WASM initialized successfully');
+        }).catch(err => {
+            console.error('Error initializing WASM:', err);
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/prism.js"></script>
 <script>"use strict";
 
 (function () {
