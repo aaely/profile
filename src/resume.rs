@@ -52,6 +52,10 @@ pub fn Resume() -> impl IntoView {
                     <li>{"Verified all reported mods either functioned as intended or did not"}</li>
                     <li>{"Wireshark network traffic to ensure encryption standards were met"}</li>
                     <li>{"Monitor SAS protocol messaging to ensure standards were being met"}</li>
+                    <li>{"Created a React app to monitor the progress of submissions"}</li>
+                    <ul>
+                    <li>{"Front End: "}<a href="https://github.com/aaely/gli">{"https://github.com/aaely/gli"}</a></li>
+                    </ul>
                 </ul>
                 <br />
                 <p><strong>{"Inventory Clerk"}</strong></p>
@@ -67,12 +71,19 @@ pub fn Resume() -> impl IntoView {
                 </ul>
                 <br />
                 <h2>{"Projects"}</h2>
-                <p><strong>{"Project 1: Personal Website"}</strong></p>
-                <p>{"Description: A personal website built with Leptos showcasing my portfolio and blog."}</p>
-                <p><strong>{"Project 2: Chat Application"}</strong></p>
-                <p>{"Description: A real-time chat application developed using Rust and WebSockets."}</p>
+                <p><strong>{"Truck Scheduling"}</strong></p>
+                <p>{"Front End: "}<a href="https://github.com/aaely/yew-app">{"https://github.com/aaely/yew-app"}</a></p>
+                <p>{"Back End: "}<a href="https://github.com/aaely/rocket_backend">{"https://github.com/aaely/rocket_backend"}</a></p>
+                <p>{"Description: A full stack web application built 100% in Rust. Automates the process of creating daily
+                receipts at my current job. Implements WebSockets for live updates, and user authentication and role based 
+                permissioning"}</p>
+                <p><strong>{"Social Media Application"}</strong></p>
+                <p>{"Front End: "}<a href="https://github.com/aaely/substrate-workshop-ui">{"https://github.com/aaely/substrate-workshop-ui"}</a></p>
+                <p>{"Blockchain: "}<a href="https://github.com/aaely/parachain-workshop">{"https://github.com/aaely/parachain-workshop"}</a></p>
+                <p>I built an ecommerce and social media platform using <a href="https://substrate.dev" target="_blank">Substrate</a> as
+                the backend and database</p>
                 <h2>{"Education"}</h2>
-                <p><strong>{"B.Sc. Computer Science"}</strong></p>
+                <p><strong>{"B.Sc. Computer Science (in progress)"}</strong></p>
                 <p>{"Southern New Hampshire University"}</p>
                 <p>{"March 2025"}</p>
                 <br />

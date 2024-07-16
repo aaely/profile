@@ -60,6 +60,37 @@ pub fn Bio() -> impl IntoView {
                 the progress of the submission at a glance. I could upload any testing performed for the mods to the individual mod and at the end of the submission I could download all testing for the 
                 entire submission and upload it to the GLI database. On the applications page I put information on how to configure the applications to talk with their supporting systems so others could
                 help with testing and have some reference to configure the systems accordingly.</p>
+                <br />
+                <h3>Fourth Project</h3>
+                <a href="https://github.com/aaely/election-madness" target="_blank">Ethereum Election Application</a>
+                <p>Here I made an application that uses Ethereum as the database for an election application. It allows a user to register using an Ethereum address in order to cast a vote for a candidate.
+                After casting a vote, it shows the user who they voted for and the totals for the current election.</p>
+                <br />
+                <h3>Fifth Project</h3>
+                <a href="https://github.com/aaely/flureerecoil" target="_blank">Cannabis Dispensary and Spotify Wrapper</a>
+                <p>In this project I used <a href="https://flur.ee" target="_blank">FlureeDB</a> to create a cannabis dispensary that tracks inventory, uses ethereum payments, has an ethereum wallet in browser,
+                uses websockets to make all updates live across all connected users, hits spotify and can search artists, songs, albums, and so on. This project was intended to help me understand traditional
+                token authentication, crypto user authentication and permissioning, and how to manage live connections in applications using websockets. This used a blockchain GraphDB as the database, nodejs as
+                the websocket server, referenced the ethereum chain to hit tokens, used <a href="https://recoiljs.org" target="_blank">Recoil</a> to manage global state.</p>
+                <br />
+                <h3>Sixth Project</h3>
+                <a href="https://github.com/aaely/substrate-workshop-ui" target="_blank">Peptide Store, Cannabis Dispensary, Social Media App Frontend</a>
+                <a href="https://github.com/aaely/parachain-workshop" target="_blank">Blockchain Backend & Database</a>
+                <p>In this project I expanded on the previous application and made a real custom blockchain to hold peptide inventory and sales, cannabis inventory and sales, and a social media app (Facebook 2008 basically).
+                The peptide store was the project that initially got me interested in programming. Peptides were lifechanging for me and I always wanted to get into the manufacturing and distribution of them.
+                The cannabis dispensary was more something I thought had a big monetary potential. This could facilitate electronic payment for cannabis products while it was still not allowed.
+                The social media portion was more I wanted to take on a project that would push me to consider design principals and data structuring to push me to be a better engineer. Overall this is the
+                project I am most proud of as it is quite remarkable.</p>
+                <br />
+                <h3>Seventh Project</h3>
+                <a href="https://github.com/aaely/yew_app" target="_blank">Trailer Scheduling Yew Frontend</a>
+                <a href="https://github.com/aaely/rocket_backend" target="_blank">Trailer Scheduling Rocket Backend</a>
+                <p>This app was made to make my life easier at my current job. I used Neo4j as a database, <a href="https://rocket.rs" target="_blank">Rust Rocket</a> as my backend, and 
+                <a href="https://yew.rs" target="_blank">Rust Yew</a> as the frontend. I use this to schedule trailers at my current job. I build the database using an In Transit Report provided to us by General Motors.
+                I merge all the data in the report into the database and it builds all receipts on a trailer by trailer basis. So at the start of the day we can download a csv that contians all the receipt data for the day
+                and push it into the Warehouse Management System server so all our receipts for the day are automatically done. This was previously a very time consuming task. I managed to make it 
+                very quick and easy. We no longer have to look up each trailer requested and find out which plants the parts are for (this is performed automatically by code and the database). 
+                This app features full user authentication and role permissioning. I have both HTTP and HTTPS versions of this running. It uses websockets for live updates.</p>
             </div>
         </div>
     }
