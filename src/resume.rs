@@ -85,7 +85,7 @@ pub fn Resume() -> impl IntoView {
                 <h2>{"Education"}</h2>
                 <p><strong>{"B.Sc. Computer Science (in progress)"}</strong></p>
                 <p>{"Southern New Hampshire University"}</p>
-                <p>{"March 2025"}</p>
+                <p>{"July 2026"}</p>
                 <br />
             </section>
         </div>
